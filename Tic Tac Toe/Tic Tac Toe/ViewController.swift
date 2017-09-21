@@ -29,14 +29,12 @@ class ViewController: UIViewController {
         if(activePlayer == 1){
             sender.setImage(UIImage(named: "Cross.png"), for: UIControlState())
             activePlayer = 2
-            print(sender.tag)
             board[sender.tag] = 1
             turnIndicator.image = UIImage(named: "Nought.png")
         }
         else {
             sender.setImage(UIImage(named: "Nought.png"), for: UIControlState())
             activePlayer = 1
-            print(sender.tag)
             board[sender.tag] = 4
             turnIndicator.image = UIImage(named: "Cross.png")
         }
