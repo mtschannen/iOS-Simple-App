@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D96E2EA31F75A7A4008C48FF /* CatsGame.png in Resources */ = {isa = PBXBuildFile; fileRef = D96E2EA21F7566DD008C48FF /* CatsGame.png */; };
 		D9DD90911F7442C400A920E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DD90901F7442C400A920E9 /* AppDelegate.swift */; };
 		D9DD90931F7442C400A920E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DD90921F7442C400A920E9 /* ViewController.swift */; };
 		D9DD90961F7442C400A920E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DD90941F7442C400A920E9 /* Main.storyboard */; };
@@ -146,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9DD90AF1F7445AD00A920E9 /* Board.png in Resources */,
+				D96E2EA31F75A7A4008C48FF /* CatsGame.png in Resources */,
 				D9DD90B61F746B0B00A920E9 /* CrossWin.png in Resources */,
 				D9DD909E1F7442C400A920E9 /* LaunchScreen.storyboard in Resources */,
 				D9DD909B1F7442C400A920E9 /* Assets.xcassets in Resources */,

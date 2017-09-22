@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var button8: UIButton!
     @IBOutlet weak var button9: UIButton!
     var board = Array(repeating: 0, count: 9)
-    let drawImage = UIImage(named: "CatsGame.png")
     
 
     @IBAction func action(_ sender: AnyObject) {
@@ -103,7 +102,7 @@ class ViewController: UIViewController {
             Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(ViewController.reset), userInfo: nil, repeats: false)
         }
         else if(!board.contains(0)){
-            turnIndicator.image = drawImage
+            turnIndicator.image = UIImage(named: "CatsGame.png")
             Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(ViewController.reset), userInfo: nil, repeats: false)
         }
 
