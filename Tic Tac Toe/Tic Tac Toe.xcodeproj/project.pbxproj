@@ -21,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D96E2EA21F7566DD008C48FF /* CatsGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CatsGame.png; path = ../../../../CatsGame.png; sourceTree = "<group>"; };
 		D9DD908D1F7442C400A920E9 /* Tic Tac Toe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tic Tac Toe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DD90901F7442C400A920E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9DD90921F7442C400A920E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 				D9DD90971F7442C400A920E9 /* Tic_Tac_Toe.xcdatamodeld */,
 				D9DD90B71F746B3800A920E9 /* NoughtWin.png */,
 				D9DD90B51F746B0B00A920E9 /* CrossWin.png */,
+				D96E2EA21F7566DD008C48FF /* CatsGame.png */,
 				D9DD90AB1F7445AD00A920E9 /* Nought.png */,
 				D9DD90AC1F7445AD00A920E9 /* Board.png */,
 				D9DD90AD1F7445AD00A920E9 /* Cross.png */,

@@ -21,7 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var button7: UIButton!
     @IBOutlet weak var button8: UIButton!
     @IBOutlet weak var button9: UIButton!
-    var board = Array(repeating: 0, count: 10)
+    var board = Array(repeating: 0, count: 9)
+    let drawImage = UIImage(named: "CatsGame.png")
     
 
     @IBAction func action(_ sender: AnyObject) {
@@ -29,19 +30,19 @@ class ViewController: UIViewController {
         if(activePlayer == 1){
             sender.setImage(UIImage(named: "Cross.png"), for: UIControlState())
             activePlayer = 2
-            board[sender.tag] = 1
+            board[sender.tag - 1] = 1
             turnIndicator.image = UIImage(named: "Nought.png")
         }
         else {
             sender.setImage(UIImage(named: "Nought.png"), for: UIControlState())
             activePlayer = 1
-            board[sender.tag] = 4
+            board[sender.tag - 1] = 4
             turnIndicator.image = UIImage(named: "Cross.png")
         }
         checkWin()
     }
     
-    @IBAction func reset(_ sender: Any) {
+    @objc func reset() {
         button1.setImage(UIImage(), for: UIControlState())
         button2.setImage(UIImage(), for: UIControlState())
         button3.setImage(UIImage(), for: UIControlState())
@@ -62,19 +63,19 @@ class ViewController: UIViewController {
         button9.addTarget(self, action: #selector(ViewController.action(_:)), for: UIControlEvents.touchUpInside)
         activePlayer = 1
         turnIndicator.image = UIImage(named: "Cross.png")
-        board = Array(repeating: 0, count: 10)
+        board = Array(repeating: 0, count: 9)
     }
     
     func checkWin(){
         var results = Array(repeating: 0, count: 8)
-        results[0] = board[1] + board[4] + board[7]
-        results[1] = board[2] + board[5] + board[8]
-        results[2] = board[3] + board[6] + board[9]
-        results[3] = board[1] + board[2] + board[3]
-        results[4] = board[4] + board[5] + board[6]
-        results[5] = board[7] + board[8] + board[9]
-        results[6] = board[1] + board[5] + board[9]
-        results[7] = board[3] + board[5] + board[7]
+        results[0] = board[0] + board[3] + board[6]
+        results[1] = board[1] + board[4] + board[7]
+        results[2] = board[2] + board[5] + board[8]
+        results[3] = board[0] + board[1] + board[2]
+        results[4] = board[3] + board[4] + board[5]
+        results[5] = board[6] + board[7] + board[8]
+        results[6] = board[0] + board[4] + board[8]
+        results[7] = board[2] + board[4] + board[6]
         if(results.contains(3)){
             button1.setImage(UIImage(named: "Cross.png"), for: UIControlState())
             button2.setImage(UIImage(named: "Cross.png"), for: UIControlState())
@@ -86,6 +87,7 @@ class ViewController: UIViewController {
             button8.setImage(UIImage(named: "Cross.png"), for: UIControlState())
             button9.setImage(UIImage(named: "Cross.png"), for: UIControlState())
             turnIndicator.image = UIImage(named: "CrossWin.png")
+            Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(ViewController.reset), userInfo: nil, repeats: false)
         }
         else if(results.contains(12)){
             button1.setImage(UIImage(named: "Nought.png"), for: UIControlState())
@@ -98,6 +100,11 @@ class ViewController: UIViewController {
             button8.setImage(UIImage(named: "Nought.png"), for: UIControlState())
             button9.setImage(UIImage(named: "Nought.png"), for: UIControlState())
             turnIndicator.image = UIImage(named: "NoughtWin.png")
+            Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(ViewController.reset), userInfo: nil, repeats: false)
+        }
+        else if(!board.contains(0)){
+            turnIndicator.image = drawImage
+            Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self, selector: #selector(ViewController.reset), userInfo: nil, repeats: false)
         }
 
     }
